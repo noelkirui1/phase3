@@ -53,12 +53,12 @@ pipenv run python -m unittest discover -s tests
 
 2. Add an ingredient:
     ```bash
-    pipenv run python -m app.cli add-ingredient
+    pipenv run python -m app.cli add-ingredient --name "ingredient name"
     ```
 
 3. Add a drink:
     ```bash
-    pipenv run python -m app.cli add-drink
+    pipenv run python -m app.cli add-drink --name "drink name"
     ```
 
 4. List all drinks:

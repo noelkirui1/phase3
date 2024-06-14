@@ -20,6 +20,16 @@ def init():
     click.echo("Database initialized!")
 
 @cli.command()
+@click.option('--name', prompt='Ingredient name', help='The name of the ingredient.')
+def add_ingredient(name):
+    """Add a new ingredient."""
+    session = Session()
+    ingredient = Ingredient(name=name)
+    session.add(ingredient)
+    session.commit()
+    click.echo(f'Ingredient {name} added successfully!')
+
+@cli.command()
 @click.option('--name', prompt='Drink name', help='The name of the drink.')
 @click.option('--ingredient_ids', prompt='Ingredient IDs', help='Comma-separated list of ingredient IDs.')
 @click.option('--quantities', prompt='Quantities', help='Comma-separated list of quantities for each ingredient.')
